@@ -1,0 +1,151 @@
+.body {
+  min-height: 100vh;
+  display: flex;
+  color: #ffe91f;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/background-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.05);
+}
+
+#app {
+  position: relative;
+  z-index: 5;
+}
+
+.card {
+  position: relative;
+  width: 18rem;
+  margin-bottom: 60px;
+  text-align: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  border: 1px solid #ffe91f;
+  color: #ffe91f;
+  cursor: pointer;
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card::after {
+  position: absolute;
+  top: 0;
+  left: 120%;
+  content: '';
+  width: 20%;
+  height: 100%;
+  background-color: rgba(144, 144, 144, 0.15);
+  transform: skewX(-43deg);
+  transition: transform 0.3s;
+}
+
+.card:hover::after {
+  transform: skewX(-43deg) translateX(-300%);
+}
+
+.card__link {
+  position: relative;
+  z-index: 7;
+  color: #ffe91f;
+  text-decoration: none;
+}
+
+.card__link:hover {
+  color: #ffe91f;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.episode {
+  padding-top: 10px;
+}
+
+.description {
+  margin-bottom: 30px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  border: 1px solid #ffe91f;
+}
+
+.description__part{
+  font-size: 25px;
+}
+
+.card-info {
+  padding: 20px;
+  flex: 0 1 45%;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid #ffe91f;
+}
+
+.episode__link-back {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #ffe91f;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.episode__link-back:hover {
+  color: #ffe91f;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  background-image: url("../images/loader.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 111px;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+@media (min-width: 1400px) {
+  .container--max-width-1140 {
+      max-width: 1140px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card:hover {
+    transform: scale(1.1);
+  }
+}
